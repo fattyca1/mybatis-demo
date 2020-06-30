@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//ibatis.apache.org//DTD Config 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-config.dtd">
+<configuration>
+    <settings>
+        <setting name="cacheEnabled" value="true"/>    <!--打开全局缓存，默认true-->
+        <!-- 是否使用插入数据后自增主键的值，需要配合keyProperty使用 -->
+        <setting name="useGeneratedKeys" value="true"/>
+    </settings>
+
+        <typeAliases>
+            <package name="com.mybatis.demo.entity"/> <!--别名,包下的东西没有注解时都用做它的最后一个缀作为别名-->
+        </typeAliases>
+
+        <!--配置环境-->
+        <environments default="mysql">
+            <!--配置mysql环境-->
+            <environment id="mysql">
+                <!--配置事务-->
+                <transactionManager type="JDBC"/>
+
+                <!--配置连接池-->
+                <dataSource type="POOLED">
+                  	<!-- ${引用上面的name} -->
+                         <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                         <property name="url" value="jdbc:mysql://192.168.2.102:3306/test"/>
+                         <property name="username" value="root"/>
+                         <property name="password" value="123456"/>
+                </dataSource>
+            </environment>
+        </environments>
+
+     <!--配置映射文件的位置-->
+        <mappers>
+            <mapper resource="com/mybatis/demo/mapper/PetMapper.xml"/>
+        </mappers>
+</configuration>

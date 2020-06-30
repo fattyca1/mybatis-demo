@@ -1,0 +1,47 @@
+
+#.gitignore for java
+*.class
+/target
+/out
+/build
+/.settings
+.classpath
+.project
+
+# logs
+/logs
+*.log
+*.log.*
+
+# Package Files #
+*.jar
+!generator.jar
+*.war
+*.ear
+
+# .gitignore foridea
+/.idea
+.idea/
+*.iml
+.svn/
+
+# .gitignore for eclipse
+
+*.pydevproject
+.metadata
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+
+/.svn
+
+target/
+/logs/
+/target/
